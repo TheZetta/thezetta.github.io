@@ -1,0 +1,177 @@
+@media only screen and (min-width:1441px) and (max-width:1920px){
+    #calendar{bottom:180px;}
+    #banner .banner-title{right:13.66%;}
+}
+@media only screen and (min-width:1281px) and (max-width:1440px)
+{
+    #banner .banner-title h1{font-size:250%;}
+    #banner .banner-title p{font-size:130%;}
+    #banner .banner-title {right: 10.66%;}
+    #calendar1{bottom: 100px;}
+}
+@media only screen and (min-width:1025px) and (max-width:1280px)
+{
+    #banner .banner-title h1{font-size:250%;}
+    #banner .banner-title p{font-size:130%;}
+    #banner .banner-title {right: 10.66%;}
+}
+@media only screen and (min-width:1003px) and (max-width:1024px)
+{
+    header{padding: 20px 0;}
+    #logo a{width: 220px;display: block;}
+    header .number a{font-size: 100%;}
+    #banner ul li{height:80vh; background-size:cover;}
+    #banner .banner-title{ top:20%; right: 1%;}
+    #banner .banner-title h1{font-size: 270%;}
+    #banner .banner-title p{font-size:130%;}
+    #calendar{left: -50px;}
+    .container-outer{width: 100%;}
+    #team-block .block{padding: 0 15px;}
+    
+    #career .block h3{font-size: 230%;}
+    
+}
+
+@media only screen and (min-width:768px) and (max-width:1002px)
+{
+    header{padding: 20px 0;}
+    #logo a{width: 220px;display: block;}
+    header .number a{font-size: 100%;}
+    #banner ul li{height:50vh; background-size:cover;}
+    #banner .banner-title{ top:20%; right: 1%;}
+    #banner .banner-title h1{font-size: 205%;}
+    #banner .banner-title p{font-size:110%;}
+    #calendar{display: none;}
+    .padding{padding:30px 0;}
+    div.title{font-size:220%; padding-bottom: 15px; margin-bottom:30px;}
+    .block .name{font-size: 160%;}
+
+    .left-container{height: auto; padding:15px; }
+    .container-outer{width: 100%; float: none;}
+
+    .tablet-view{left: 15px;}
+
+    .portfolio-outer{float: none; width: 100%; padding: 15px;}
+    .portfolio-desc{margin-top: 10px;}
+    .portfolio-desc .web-url{ padding: 10px 0;}
+    .portfolio-desc .name{font-size: 200%;}
+
+    #testimonials .item .name .text{font-size:150%;}
+    #testimonials .item .name .map{margin-top:-12px;}
+    #testimonials .item .name .map img{width:30px;}
+
+    #career .block h3{font-size: 208%; padding-bottom:20px; margin-bottom:20px; margin-top: 0;}
+    #contact .message{margin-bottom: 50px;}
+    #contact .btn{margin:20px auto 0; padding:8px 0; font-size:100%;}
+    form .select2-container{width: 100%;}
+    footer{padding: 15px 0;}
+
+}
+
+@media only screen and (min-width:320px) and (max-width:767px)
+{   header{padding: 15px 0;}
+    #logo a{width: 135px;display: block;}
+    header .number{margin: 0;}
+    header .number a{font-size: 77%;}
+    #banner{max-width:100%; height:auto; padding-top: 53px;}
+    #banner .banner-title{margin:0; top: 0; right: 0; left: 0; }
+    #banner .banner-title h1{font-size: 150%; margin-bottom:0px;}
+    #banner .banner-title p{font-size:71%;}
+    #calendar{display: none;}
+    .padding{padding: 15px 0;}
+    div.title{font-size:178%; padding-bottom: 15px; margin-bottom:30px;}
+
+    #our-services .block{max-width: 100%; margin: 0 auto 15px}
+    #our-services .block:after{content: ""; clear:both; display: table;}
+    #our-services .block .icon{width:40px; margin-right: 5%; display:block; float: left;}
+    #our-services .block .service-info{width:80%;display:block;float: left; text-align: left;}
+    #our-services .block .name{font-size:128%; margin-bottom: 10px;}
+    #our-services .block .service-info p{font-size: 93%;}
+
+    .block .icon .sprite{position: relative;}
+    .cart-icon{background-position:-7px -181px; width:31px; height:29px;}
+    .webapp-icon{background-position:-48px -182px; width:29px; height:22px;}
+    .mobapp-icon{background-position:-13px -221px; width:20px; height:31px;}
+    #our-services .doc-icon{background-position:-41px -226px; width:23px; height:25px;}
+    .web-icon{background-position:-72px -226px; width:29px; height:24px;}
+
+    .block .name{font-size: 157%;}
+
+    .left-container{height: auto; padding:15px; }
+    .container-outer{width: 100%; float: none;}
+    #team-block .block{max-width: 100%;}
+    #team-block .block .icon{margin-bottom: 15px;}
+    #team-block .title{margin-bottom: 30px;}
+    #career .title,#career .sub-title{margin-bottom:30px;}
+    #career .sub-title{font-size: 105%;}
+    #team-block .team-slider .col-xs-12{padding: 0;}
+    #team-block .bx-wrapper .bx-viewport{background: transparent;}
+    #team-block .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager{bottom: 0;}
+    #team-block .bx-wrapper .bx-pager.bx-default-pager a{background:#f8f8f8; width:8px; height:8px; -moz-border-radius: 50%; -webkit-border-radius: 50%;  border-radius: 50%;}
+    #team-block .bx-wrapper .bx-pager.bx-default-pager a.bx-pager-link.active{background:#fff;}
+
+    .tablet-view,.mobile-view{display: none;}
+    .desktop-view{background: none; height: auto; left: 0; right: 0;}
+    .desktop-view .desk-image{left: 0; top: 0; right: 0; width: 100%;}
+
+    #portfolio{padding-bottom:30px;}
+    #portfolio div.title{margin-bottom: 30px;}
+    .portfolio-outer{float: none; width: 100%; padding: 15px;}
+    .portfolio-desc{margin-top: 10px;}
+    #portfolio .portfolio-desc img{max-width:80px;}
+    .portfolio-desc .web-url{max-width: 100px; font-size: 95%; padding: 7px 0;}
+    .portfolio-desc .name{font-size: 178%;}
+    #portfolio .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager{bottom: -30px;}
+    #portfolio .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{bottom: -20px;}
+
+    #testimonials .item .name .person img{width:60px;}
+    #testimonials .item .name .text{font-size:128%;}
+    #testimonials .item .message{font-size: 100%;}
+    #testimonials .item .message{padding:8px 0 20px 0;}
+    #testimonials .owl-pagination{margin-top: 10px;}
+    #testimonials .owl-theme .owl-controls .owl-page span{background:#f8f8f8; width:8px; height:8px;;}
+    #testimonials .owl-theme .owl-controls .owl-page.active span{background:#fff;}
+    #testimonials .item .message::before,#testimonials .item .message:after{width:25px; height:19px; background-size: cover;}
+    #testimonials .item .name .map{margin-top:-10px;}
+    #testimonials .item .name .map img{width:24px;}
+
+    #career .block{text-align: left; max-width: 100%; margin: 0 auto 20px;}
+    #career .block h3{font-size: 128%; padding-bottom: 7px; margin-bottom: 10px; margin-top: 0;}
+    #career .block h3:after{right: auto;}
+
+    #contact .message{margin-bottom: 30px;}
+    #contact .message p{font-size:110%; }
+    #contact .message p .number,#contact .message p .email{display: block;}
+    #contact .message p .sep{display: none;}
+    #contact .form-group{margin-bottom:5px;}
+    #contact .form-group .floating-label{font-size: 90%;}
+    #contact .select2-container--default .select2-selection--single .select2-selection__rendered{font-size: 100%}
+    #contact .form-group.has-captcha .input-group{display: block;}
+    #contact .form-group.has-captcha .input-group .form-control{display: block; margin: 0 0 10px 0; width: 100%;}
+    #contact .form-group.has-captcha .input-group .input-group-addon{display: inline; border: none; background: transparent;}
+    form .refresh{background: #eeeeee;}
+    #contact .btn{max-width: 100px; margin: 20px auto 0; padding: 5px 0; font-size:100%;}
+    form{margin: 0 -15px;}
+    form .select2-container{width: 100%;}
+    footer{padding: 15px 0;}
+
+}
+
+
+@media only screen and (max-width:767px) and (orientation:portrait) {
+    .scroll-downs{bottom:0; }
+    #banner ul li{height:45vh; background-size: cover;}
+    #team-block ul.slides li{height:40vh;}
+    .desktop-view .desk-image{height:200px;}
+}
+
+@media only screen and (max-width:767px) and (orientation:landscape){
+    #banner ul li{height:90vh;}
+    #team-block ul.slides li{height:100vh;}
+    .desktop-view .desk-image{height: 300px;}
+}
+
+@media only screen and (min-width:320px) and (max-width:480px)
+{
+    #banner .banner-title h1{font-size: 120%; margin-top: 5px; margin-bottom:0px; line-height: 120%;}
+}

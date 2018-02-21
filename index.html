@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>The Zetta Technologies - Web / Mobile Development</title>
+
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!--
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="36x36"  href="images/favicon/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="48x48"  href="images/favicon/android-icon-48x48.png">
+<link rel="icon" type="image/png" sizes="72x72"  href="images/favicon/android-icon-72x72.png">
+<link rel="icon" type="image/png" sizes="96x96"  href="images/favicon/android-icon-96x96.png">
+<link rel="icon" type="image/png" sizes="144x144"  href="images/favicon/android-icon-144x144.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+
+<link rel="manifest" href="images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/favicon/ms-icon-70x70.png">
+<meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+<meta name="msapplication-TileImage" content="images/favicon/ms-icon-150x150.png">
+<meta name="msapplication-TileImage" content="images/favicon/ms-icon-310x310.png">
+<meta name="theme-color" content="#ffffff">
+-->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/icon/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/icon/apple-icon-114x114.png">
+
+<link href="styles/font-awesome.css" rel="stylesheet" >
+<link href="styles/bootstrap.css" rel="stylesheet">
+<link href="styles/animate.css" rel="stylesheet">
+<link href="styles/jquery.bxslider.css" rel="stylesheet">
+<link href="styles/owl.carousel.css" rel="stylesheet">
+<link href="styles/select2.css" rel="stylesheet">
+<link href="styles/jquery-ui.css" rel="stylesheet">
+<link href="styles/common.css" rel="stylesheet">
+<link href="styles/home.css" rel="stylesheet">
+<link href="styles/responsive.css" rel="stylesheet">
+
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/jquery.bxslider.js"></script>
+<script src="scripts/owl.carousel.js"></script>
+<script src="scripts/select2.js"></script>
+<script src="scripts/jquery-ui.js"></script>
+<script src="scripts/common.js"></script>
+<!--[if lt IE 9]>
+  <script src="/scripts/html5shiv.min.js"></script>
+  <script src="/scripts/respond.min.js"></script>
+<![endif]-->
+
+<script>
+    $(document).ready(function () {
+        var header_h = $(".navbar-fixed-top").outerHeight();
+        
+        $(function () {
+            $('a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - header_h
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+
+        $('.slides').bxSlider({
+            mode: 'fade', pager: false, controls: false, pause: 5000, auto: true, autoControls: true,
+            onSlideAfter: function () {
+                $('.bx-start').trigger('click');
+                $(".slides .banner-title").addClass("animated fadeInUp");
+            },
+            onSlideBefore: function () {
+                $(".slides .banner-title").removeClass("animated fadeInUp");
+            }
+        });
+
+        $('.portfolio-slider').bxSlider({
+            touchEnabled: true, pager: true, controls: false, pause: 7000, auto: false, autoControls: true,
+            onSlideAfter: function () {
+                $('.bx-start').trigger('click');
+                $(".slides .banner-title").addClass("animated fadeInUp");
+            },
+            onSlideBefore: function () {
+                $(".slides .banner-title").removeClass("animated fadeInUp");
+            }
+        });
+
+        $('#testimonials .items').owlCarousel({
+            autoPlay: false, //Set AutoPlay to 3 seconds
+            items: 4,
+            itemsMobile: [480, 1],
+            itemsTablet: [768, 2],
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 2],
+            navigation: true,
+            navigationText: ["", ""],
+            scrollPerPage: true
+        });
+
+        $('#cmbCountryCode').select2();
+
+        $('.refresh').click(function () {
+            $('#' + $(this).attr('data-parent')).attr('src', $('#' + $(this).attr('data-parent')).attr('src') + '/' + new Date().getTime());
+        });
+
+        if ($(window).width() < 767) {
+            $(".left-container").find(".row.no-gutters").wrapAll("<div class='team-slider'></div>");
+            $(".left-container .col-xs-12").unwrap();
+            $('.team-slider').bxSlider({
+                pager: true, controls: false, pause: 5000, auto: true, autoControls: true,
+                onSlideAfter: function () {
+                    $('.bx-start').trigger('click');
+                }
+            });
+            
+            $(".desktop-view .desk-image").each(function () {
+                var imageUrl = $(this).css('background-image');
+                var backgroundImage = imageUrl.replace('url(', '').replace(')', '').replace(/\"/gi, "");
+                var img = $('<img class="img-responsive center-block">');
+                img.attr('src', backgroundImage);
+                img.appendTo($(this));
+                $(this).css('background-image', '');
+            });
+        }
+
+        if ($(window).width() < 1002) {
+            
+        }
+
+
+
+    });
+</script>
+        
+        <script>
+            $(document).ready(function () {
+                $('#datepicker').datepicker({maxDate: 0, minDate:0, dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']});
+                $('.refresh').click(function () {
+                    $('#' + $(this).attr('data-parent')).attr('src', $('#' + $(this).attr('data-parent')).attr('src') + '/' + new Date().getTime());
+                });
+                $('.form-control').on('focus blur', function (e) {
+                    $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+                }).trigger('blur');
+            });
+
+        </script>
+        <script>
+
+    
+    var vIsSubmit = false;
+
+    $(document).ready(function() {
+
+        $(".frmSubmit").attr("disabled", "disabled");
+
+        $(function(){
+            $("#frmContact").submit(function(e){
+                e.preventDefault();
+                var href = $(this).attr("action");
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: href,
+                    data: $(this).serialize(),
+                    success: function(response){
+                        if(response.status == "success"){
+                            alert("We received your submission, thank you!");
+                        }else{
+                            alert("An error occured: " + response.message);
+                        }
+                    }
+                });
+            });
+        });
+
+        /* $('#frmContact').submit(function(e){
+    
+            e.preventDefault();
+            
+            if(vIsSubmit) return;
+            vIsSubmit = true;
+    
+            $('div.error').remove();                            
+            $('.loading-wrap').show();
+            $('.loading').html('<img src="images/loading.gif" alt="">');
+            
+            var objFormData = new FormData(document.getElementById('frmContact'));
+
+            $.ajax(
+            {
+                url: "https://formspree.io/lkkjlkjl@lkjhkhj.com",
+                data: objFormData,
+                type: 'POST',
+                success: function (data)
+                {           
+                    $('.loading-wrap').hide();
+                    if(data['iserror'])
+                    {
+                        vIsSubmit = false;
+                        
+                        if(data['errorjs'])
+                        {
+                            $('input.error, textarea.error, select.error').each(function() { $(this).removeAttr('data-error').removeClass('error').closest('.form-group').find('div.error-inline').remove(); });
+                            
+                            eval(data['errorjs']);
+                            handleErrorControls();
+                            
+                            $('.form-group').find('[data-error]').each(function()
+                            {
+                                var vError = $(this).attr('data-error');
+                                $(this).closest('.form-group').append('<div class="error-inline">' + vError + '</div>').fadeIn('slow');
+                            });
+                        }
+                    }
+                    else
+                    {
+                        $('.contact-form').slideUp();
+                        $('.contact-sucess').html(data['message']).slideDown();
+                    }
+                },
+                error: function (data)
+                {                                                        
+                    vIsSubmit = false;
+                    handleErrorControls();                    
+                }
+            }); 
+        }); */
+        
+    });
+    /*
+    function handleErrorControls()
+    {
+        $('input.error, textarea.error, select.error').keypress(function()
+        {                         
+            $(this).removeAttr('data-error').removeClass('error').closest('.form-group').find('div.error-inline').remove();
+        });
+    }*/
+</script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+        function enableSubmitBtn() {
+            $(".frmSubmit").removeAttr("disabled");
+        }
+    </script>
+    </head>
+
+    <body id="home">
+
+        <div id="mobile-menu"></div>
+
+        <div id="wrapper">
+            <header class="navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <div id="logo"><a href="index.html"><img src="images/logo.png" alt="The Zetta Technologies" class="img-responsive"></a></div>            </div>
+            <div class="col-xs-6">
+                <div class="number"><a href="tel:+91-9824383332">+91-9824383332</a></div>
+            </div>
+        </div>
+    </div>
+</header>
+            <section id="banner">
+                <div class="container-fuild">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul>
+                                <li style="background-image: url(images/main-banner.jpg);">
+                                    <div class="banner-title">
+                                        <h1>Web &amp; Mobile based<br> design and development services</h1>
+                                        <p>A pure fusion of logic, technology and design</p>
+                                    </div>
+                                    <div id="calendar">
+                                        <div id="datepicker"></div>
+                                    </div>
+                                    <a href="#our-services" class="scroll-downs">
+                                        <span class="scroller"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="our-services" class="padding">
+                <div class="container">
+                    <div class="col-xs-12">
+                        <div class="title">What We Do ?</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="block">
+                                <div class="icon">
+                                    <div class="sprite cart-icon"></div>
+                                </div>
+                                <div class="service-info">
+                                    <div class="name">eCommerce</div>
+                                    <p>Magento based ecommerce solutions, be it a single vendor platform or a marketplace.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="block">
+                                <div class="icon">
+                                    <div class="sprite webapp-icon"></div>
+                                </div>
+                                <div class="service-info">
+                                    <div class="name">Web Applications</div>
+                                    <p>New application development, enhancements, API integration, migrations and a cocktail.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="block">
+                                <div class="icon">
+                                    <div class="sprite mobapp-icon"></div>
+                                </div>
+                                <div class="service-info">
+                                    <div class="name">Mobile Applications</div>
+                                    <p>Complete life cycle solutions including UI design, application development, application testing and verification & validation for Android and iOS platforms</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="hidden-xs col-sm-2 col-md-2"></div>
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="block">
+                                <div class="icon">
+                                    <div class="sprite doc-icon"></div>
+                                </div>    
+                                <div class="service-info">
+                                    <div class="name">CMS</div>
+                                    <p>New application development, enhancements, API integration, migrations and a cocktail.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="block">
+                                <div class="icon">
+                                    <div class="sprite web-icon"></div>
+                                </div>
+                                <div class="service-info">
+                                    <div class="name">Websites</div>
+                                    <p>Complete life cycle solutions including UI design, application development, application testing and verification & validation for Android and iOS platforms</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden-xs col-sm-2 col-md-2"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="team-block">
+                <div class="container-fuild">
+                    <div class="row no-gutters">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-md-push-6">
+                            <div class="right-container">
+                                <ul class="slides">
+                                    <li style="background-image: url(images/team-banner01.jpg);"></li>
+                                    <li style="background-image: url(images/team-banner02.jpg);"></li>
+                                    <li style="background-image: url(images/team-banner03.jpg);"></li>
+                                    <li style="background-image: url(images/team-banner04.jpg);"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-md-pull-6">
+                            <div class="left-container padding">
+                                <div class="container-outer">
+                                    <div class="title">How We Do It ?</div>
+                                    <div class="row no-gutters">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="block">
+                                                <div class="icon">
+                                                    <div class="sprite doc-icon"></div>
+                                                </div>    
+                                                <div class="name">Analyzing</div>
+                                                <div class="description">
+                                                    <p>Your business, market and needs to gain the best insight on your users' preferences.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="block">
+                                                <div class="icon">
+                                                    <div class="sprite define-icon"></div>
+                                                </div>    
+                                                <div class="name">Defining</div>
+                                                <div class="description">
+                                                    <p>Tools, platforms and systems to perfectly integrate with objective of establishing a presence online. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="block">
+                                                <div class="icon">
+                                                    <div class="sprite build-icon"></div>
+                                                </div>    
+                                                <div class="name">Building</div>
+                                                <div class="description">
+                                                    <p>The desired platform or system, with modern framework, ingenious design, and user-friendly features for your clients to avail.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="block">
+                                                <div class="icon">
+                                                    <div class="sprite deliver-icon"></div>
+                                                </div>    
+                                                <div class="name">Delivering</div>
+                                                <div class="description">
+                                                    <p>Services to launch your online presence across mediums, with scalable interface and cross platform compatibility. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" class="padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="title">What We Have Done?</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-slider container-fuild">
+                    <div class="row no-gutters">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-md-push-5">
+                            <div class="device-outer">
+                                <div class="desktop-view">
+                                    <div class="desk-image" style="background-image: url(images/projects/shyam/website.jpg);"></div>
+                                </div>
+                                <div class="tablet-view">
+                                    <div class="tab-image" style="background-image: url(images/projects/shyam/ipad.jpg);"></div>
+                                </div>
+                                <div class="mobile-view">
+                                    <div class="mob-image" style="background-image: url(images/projects/shyam/iphone.jpg);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-7">
+                            <div class="portfolio-outer">
+                                <div class="portfolio-desc">
+                                    <img src="images/projects/shyam/logo.png" alt="" class="img-responsive center-block">
+                                    <div class="name">Shyam Plastic Industries</div>
+                                    <p>A responsive website for a PET Blow Moulding and Extrusion Machinery manufacturer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row no-gutters">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-md-push-5">
+                            <div class="device-outer">
+                                <div class="desktop-view">
+                                    <div class="desk-image" style="background-image: url(images/projects/advait/website.jpg);"></div>
+                                </div>
+                                <div class="tablet-view">
+                                    <div class="tab-image" style="background-image: url(images/projects/advait/ipad.jpg);"></div>
+                                </div>
+                                <div class="mobile-view">
+                                    <div class="mob-image" style="background-image: url(images/projects/advait/iphone.jpg);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-7">
+                            <div class="portfolio-outer">
+                                <div class="portfolio-desc">
+                                    <img src="images/projects/advait/logo.png" alt="" class="img-responsive center-block">
+                                    <div class="name">Advait Business Solutions Pvt. Ltd.</div>
+                                    <p>A responsive website for an IT solutions provider based out of Gujarat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row no-gutters">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-md-push-5">
+                            <div class="device-outer">
+                                <div class="desktop-view">
+                                    <div class="desk-image" style="background-image: url(images/projects/wales/website.jpg);"></div>
+                                </div>
+                                <div class="tablet-view">
+                                    <div class="tab-image" style="background-image: url(images/projects/wales/ipad.jpg);"></div>
+                                </div>
+                                <div class="mobile-view">
+                                    <div class="mob-image" style="background-image: url(images/projects/wales/iphone.jpg);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-7">
+                            <div class="portfolio-outer">
+                                <div class="portfolio-desc">
+                                    <img src="images/projects/wales/logo.png" alt="" class="img-responsive center-block">
+                                    <div class="name">Wales Industries</div>
+                                    <p>A responsive website for a total bulk handling and supply chain solutions provider based in Australia and China.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row no-gutters">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-md-push-5">
+                            <div class="device-outer">
+                                <div class="desktop-view">
+                                    <div class="desk-image" style="background-image: url(images/projects/bulkcorp-int/website.jpg);"></div>
+                                </div>
+                                <div class="tablet-view">
+                                    <div class="tab-image" style="background-image: url(images/projects/bulkcorp-int/ipad.jpg);"></div>
+                                </div>
+                                <div class="mobile-view">
+                                    <div class="mob-image" style="background-image: url(images/projects/bulkcorp-int/iphone.jpg);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-7">
+                            <div class="portfolio-outer">
+                                <div class="portfolio-desc">
+                                    <img src="images/projects/bulkcorp-int/logo.png" alt="" class="img-responsive center-block">
+                                    <div class="name">Bulkcorp International</div>
+                                    <p>A responsive website for an Ahmedabad based FIBC (bulk bags) manufacturer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row no-gutters">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-md-push-5">
+                            <div class="device-outer">
+                                <div class="desktop-view">
+                                    <div class="desk-image" style="background-image: url(images/projects/runtherann/website.jpg);"></div>
+                                </div>
+                                <div class="tablet-view">
+                                    <div class="tab-image" style="background-image: url(images/projects/runtherann/ipad.jpg);"></div>
+                                </div>
+                                <div class="mobile-view">
+                                    <div class="mob-image" style="background-image: url(images/projects/runtherann/iphone.jpg);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-7">
+                            <div class="portfolio-outer">
+                                <div class="portfolio-desc">
+                                    <img src="images/projects/runtherann/logo.png" alt="" class="img-responsive center-block">
+                                    <div class="name">Run The Rann</div>
+                                    <p>A responsive website for an ultra trail race.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row no-gutters">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-md-push-5">
+                            <div class="device-outer">
+                                <div class="desktop-view">
+                                    <div class="desk-image" style="background-image: url(images/projects/tecglassdigital/website.jpg);"></div>
+                                </div>
+                                <div class="tablet-view">
+                                    <div class="tab-image" style="background-image: url(images/projects/tecglassdigital/ipad.jpg);"></div>
+                                </div>
+                                <div class="mobile-view">
+                                    <div class="mob-image" style="background-image: url(images/projects/tecglassdigital/iphone.jpg);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-7">
+                            <div class="portfolio-outer">
+                                <div class="portfolio-desc">
+                                    <img src="images/projects/tecglassdigital/logo.png" alt="" class="img-responsive center-block">
+                                    <div class="name">Tecglass Digital</div>
+                                    <p>A responsive website for a glass printing machine manufacturer based in Spain.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row no-gutters">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-md-push-5">
+                            <div class="device-outer">
+                                <div class="desktop-view">
+                                    <div class="desk-image" style="background-image: url(images/projects/theimpossiblerace/website.jpg);"></div>
+                                </div>
+                                <div class="tablet-view">
+                                    <div class="tab-image" style="background-image: url(images/projects/theimpossiblerace/ipad.jpg);"></div>
+                                </div>
+                                <div class="mobile-view">
+                                    <div class="mob-image" style="background-image: url(images/projects/theimpossiblerace/iphone.jpg);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-7">
+                            <div class="portfolio-outer">
+                                <div class="portfolio-desc">
+                                    <img src="images/projects/theimpossiblerace/logo.png" alt="" class="img-responsive center-block">
+                                    <div class="name">The Impossible Race</div>
+                                    <p>Responsive website for a yearly cycling event offering facility for online participant registration and fee payment along with automization of bulk of post event activities like certificate generation, result publishing, etc.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row no-gutters">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-md-push-5">
+                            <div class="device-outer">
+                                <div class="desktop-view">
+                                    <div class="desk-image" style="background-image: url(images/projects/milacronindia/website.jpg);"></div>
+                                </div>
+                                <div class="tablet-view">
+                                    <div class="tab-image" style="background-image: url(images/projects/milacronindia/ipad.jpg);"></div>
+                                </div>
+                                <div class="mobile-view">
+                                    <div class="mob-image" style="background-image: url(images/projects/milacronindia/iphone.jpg);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-7">
+                            <div class="portfolio-outer">
+                                <div class="portfolio-desc">
+                                    <img src="images/projects/milacronindia/logo.png" alt="" class="img-responsive center-block">
+                                    <div class="name">Milacron India</div>
+                                    <p>A responsive website for a renowned Injection Moulding Machinery manufacturer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section id="testimonials" class="padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="hidden-xs hidden-sm col-md-2"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-8">
+                            <div class="title">What Client Says ?</div>
+                            <div class="items">
+                                <div class="item">
+                                    <div class="name">
+                                        <div class="person"><img src="images/jerry-wu-pic.jpg" alt="" class="img-responsive center-block"></div>
+                                        <div class="map"><img src="images/china-map.jpg" alt="" class="img-responsive center-block"></div>
+                                        <div class="text">Jerry Wu</div>
+                                    </div>
+                                    <div class="message">The Zetta team is very patient, communication was so easy and so reliable.<br> I was extremely happy with the outcome and I'm really grateful to everyone involved in creating our company website. I would definitely recommend them.</div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="name">
+                                        <div class="person"><img src="images/testimonials-pic02.jpg" alt="" class="img-responsive center-block"></div>
+                                        <div class="map"><img src="images/usa-map.jpg" alt="" class="img-responsive center-block"></div>
+                                        <div class="text">Ruby Lela</div>
+                                    </div>
+                                    <div class="message">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis <br>praesentium voluptatum deleniti atque corrupti quos dolores et quas </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="name">
+                                        <div class="person"><img src="images/testimonials-pic03.jpg" alt="" class="img-responsive center-block"></div>
+                                        <div class="map"><img src="images/usa-map.jpg" alt="" class="img-responsive center-block"></div>
+                                        <div class="text">Ruby Lela</div>
+                                    </div>
+                                    <div class="message">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis <br>praesentium voluptatum deleniti atque corrupti quos dolores et quas </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-2"></div>
+                    </div>
+                </div>
+            </section> -->
+
+            <section id="career" class="padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="hidden-xs hidden-sm col-md-1"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-10">
+                            <div class="title">We are looking for</div>
+                            <div class="sub-title">Eligible candidates can send their resumes to<br> <strong>hr@thezetta.com</strong></div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="block">
+                                        <h3>UI/UX Designer</h3>
+                                        <p>Minimum experience of 3-4 years.<br>Degree/Diploma holder in Fine Arts preferred.</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="block">
+                                        <h3>Android Developer</h3>
+                                        <p>Minimum experience of 2-3 years with at least 5 apps published on store.<br> MCA/BE (IT)/BCA.</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="block">
+                                        <h3>PHP Developer</h3>
+                                        <p>Minimum experience of 2 years on Core PHP and MySQL.<br> MCA/BE (IT)/BCA.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-1"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="padding">
+                <div class="container">
+                    <div class="title">Get in Touch</div>
+                    <div class="message text-center">
+                        <p><strong>The Zetta Technologies</strong></p>
+                        <p>A-1 Karamveer Tower, Mill Road Nadiad Gujarat - 387001. India</p>
+                        <p><span class="number">Call: <a href="tel:++91-9824383332">+91-9824383332</a></span> <span class="sep">|</span>  <span class="email">Email: <a href="mailto:info@thezetta.com">info@thezetta.com</a></span></p>
+                    </div>
+                    <div class="hidden-xs hidden-sm col-md-1"></div>
+                    <div class="col-xs-12 col-sm-12 col-md-10">
+
+                        <div class="loading-wrap" style="display:none;"><div class="loading"></div></div>
+                        <div id="contact-sucess" class="contact-sucess" style="display: none;"></div>
+                        <form name="frmContact" id="frmContact" method="post" class="contact-form" action="https://formcarry.com/s/Byer3nMwG" accept-charset="UTF-8">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Name</label>
+                                        <input type="text" class="form-control" id="txtName" name="txtName"/>
+                                    </div>
+                                </div>    
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Email ID</label>
+                                        <input type="text" class="form-control" id="txtEmail" name="txtEmail"/>
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label mob-label">Mobile Number</label>
+                                        <input type="text" class="form-control" id="txtMobile" name="txtMobile"/>
+                                    </div>                                    
+                                </div>  
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Company Name</label>
+                                        <input type="text" class="form-control" id="txtCompanyName" name="txtCompanyName"/>
+                                    </div>
+                                </div>        
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Message</label>
+                                        <textarea class="form-control" id="txtMessage" name="txtMessage"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="g-recaptcha" data-sitekey="6Ld0f0YUAAAAAPBAKfv3Jt0Zu7YXjC8Q6dfjfksE" data-callback="enableSubmitBtn"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn center-block frmSubmit">Send</button>
+                                </div>
+                            </div>    
+
+                        </form>
+                    </div>
+                    <div class="hidden-xs hidden-sm col-md-1"></div>
+                </div>        
+            </section>
+
+            <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="copyright"> &copy; 2018 All Rights Reserved</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="totop"><i class="fa fa-angle-up fa-2x"></i></div>
+</footer>
+        </div>
+    </body>
+
+
+</html>
